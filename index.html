@@ -1,1 +1,177 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Studio - Download Apps</title>
+    <!-- Tailwind CSS for rich aesthetic styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#04060E',
+                        brandCardAndroid: '#080A16',
+                        brandCardIos: '#09090E',
+                        brandPurple: '#8B5CF6',
+                        brandPink: '#EC4899',
+                        brandGold: '#F59E0B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #04060E;
+        }
+        /* Lock screen layout to absolutely prevent vertical scrolling */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="text-gray-100 flex flex-col h-full select-none">
+
+    <header class="bg-black/40 backdrop-blur-md border-b border-gray-900 px-6 py-4 shrink-0 flex items-center justify-between z-10">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brandPurple to-brandPink flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+            </div>
+            <div>
+                <span class="text-sm font-extrabold tracking-wider bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">AI STUDIO HUB</span>
+            </div>
+        </div>
+        <div class="text-[11px] text-gray-500 font-semibold tracking-wider uppercase">
+            Official Downloads
+        </div>
+    </header>
+
+    <!-- This container is always 100% of the remaining height, splitting side-by-side on desktop, stacked on mobile -->
+    <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
+        
+        <!-- ANDROID APP SECTION (AI Image Generator) -->
+        <!-- Design & Icon style inspired by "Screenshot 2026-06-19 at 8.05.29 PM.jpg" -->
+        <section class="flex-1 bg-gradient-to-b from-brandCardAndroid to-brandDark flex flex-col justify-center items-center p-6 md:p-12 relative border-b md:border-b-0 md:border-r border-gray-900/60 overflow-hidden">
+            <!-- Subtle ambient glow in background -->
+            <div class="absolute w-48 h-48 bg-brandPurple/10 rounded-full blur-[80px] -top-10 -left-10"></div>
+            
+            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-5">
+                <!-- App Store Badge Type -->
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-widest text-brandPink bg-brandPink/10 border border-brandPink/20 uppercase">
+                    Android Native
+                </span>
+
+                <!-- App Icon: Premium colorful gradient camera representing original image -->
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-[#090C16] p-1 border border-purple-500/30 shadow-xl relative overflow-hidden flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brandPurple via-brandPink to-brandGold opacity-25"></div>
+                    <!-- Icon shape matches visual signature of "Screenshot 2026-06-19 at 8.05.29 PM.jpg" -->
+                    <svg class="w-16 h-16 text-white z-10" viewBox="0 0 100 100" fill="none">
+                        <rect x="18" y="18" width="64" height="64" rx="18" fill="#0C0A1C" stroke="url(#paint0_linear)" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="18" stroke="#EC4899" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="9" fill="#8B5CF6"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="18" y1="18" x2="82" y2="82" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#8B5CF6"/>
+                                <stop offset="0.5" stop-color="#EC4899"/>
+                                <stop offset="1" stop-color="#F59E0B"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- App Identity Metadata -->
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                        AI Image Generator - Art Maker
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">
+                        Developer Raman • <span class="text-emerald-400 font-semibold">★ rated 3+</span>
+                    </p>
+                </div>
+
+                <!-- Simple description -->
+                <p class="text-xs text-gray-500 max-w-xs leading-relaxed">
+                    Apne text inputs ko seconds me gorgeous digital photos, sketches aur avatars me badlein.
+                </p>
+
+                <!-- GOOGLE PLAY DOWNLOAD ACTION BUTTON -->
+                <a href="https://play.google.com/store/apps/details?id=com.developerraman.aiimagegenerator" target="_blank" class="w-full bg-[#0D1022] hover:bg-brandPurple/10 border border-brandPink/30 hover:border-brandPink px-6 py-4 rounded-2xl flex items-center justify-center gap-3.5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-purple-950/10">
+                    <!-- Standard Google Play vector badge -->
+                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 5.25V18.75L15.3 12L3 5.25Z" fill="#34A853"/>
+                        <path d="M15.3 12L19.5 9.6L3 3V5.25L15.3 12Z" fill="#EA4335"/>
+                        <path d="M15.3 12L3 18.75V21L19.5 14.4L15.3 12Z" fill="#FBBC05"/>
+                        <path d="M19.5 14.4L21 13.5C21.9 12.9 21.9 11.1 21.0 10.5L19.5 9.6L15.3 12L19.5 14.4Z" fill="#4285F4"/>
+                    </svg>
+                    <div class="text-left">
+                        <span class="block text-[9px] text-gray-400 uppercase tracking-widest font-semibold">Download Free</span>
+                        <span class="text-sm font-extrabold text-white">Google Play Store</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- IOS APP SECTION (Weargen Clothes Changer) -->
+        <!-- Design & Icon style inspired by "Screenshot 2026-06-19 at 8.07.55 PM.jpg" -->
+        <section class="flex-1 bg-gradient-to-b from-brandCardIos to-brandDark flex flex-col justify-center items-center p-6 md:p-12 relative overflow-hidden">
+            <!-- Ambient golden flow background -->
+            <div class="absolute w-48 h-48 bg-brandGold/5 rounded-full blur-[80px] -bottom-10 -right-10"></div>
+            
+            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-5">
+                <!-- App Store Badge Type -->
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-widest text-brandGold bg-brandGold/10 border border-brandGold/20 uppercase">
+                    iOS Exclusive
+                </span>
+
+                <!-- App Icon: Premium dark hanger container representing original image -->
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-black border border-gray-800 shadow-xl relative overflow-hidden flex flex-col items-center justify-center p-2.5">
+                    <!-- Icon signature matches visual signature of "Screenshot 2026-06-19 at 8.07.55 PM.jpg" -->
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4a3 3 0 00-3 3v1a1 1 0 001 1h4a1 1 0 001-1V7a3 3 0 00-3-3z M12 8v12M6 12h12L12 8z"/>
+                    </svg>
+                    <span class="text-[9px] text-gray-400 font-extrabold tracking-widest mt-1.5">WEARGEN</span>
+                </div>
+
+                <!-- App Identity Metadata -->
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
+                        Weargen: AI Clothes Changer
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">
+                        Rohan Kamboj • <span class="text-brandGold font-semibold">★ Premium Fashion</span>
+                    </p>
+                </div>
+
+                <!-- Simple description -->
+                <p class="text-xs text-gray-500 max-w-xs leading-relaxed">
+                    Apne photos me hairstyles, kapde, and custom background themes badlein bina real change ke.
+                </p>
+
+                <!-- APPLE APP STORE DOWNLOAD ACTION BUTTON -->
+                <a href="https://apps.apple.com/in/app/weargen-ai-clothes-changer/id6775276519" target="_blank" class="w-full bg-[#111115] hover:bg-brandGold/10 border border-brandGold/30 hover:border-brandGold px-6 py-4 rounded-2xl flex items-center justify-center gap-3.5 transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-lg shadow-amber-950/5">
+                    <!-- Standard Apple App Store vector icon -->
+                    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.48C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5M15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.97 1.04 14.78 1.66 14.08 2.48C13.48 3.18 12.96 4.3 13.1 5.56C14.19 5.64 15.31 5 15.97 4.17Z"/>
+                    </svg>
+                    <div class="text-left">
+                        <span class="block text-[9px] text-gray-400 uppercase tracking-widest font-semibold">Download on the</span>
+                        <span class="text-sm font-extrabold text-white">App Store (iOS)</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
