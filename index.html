@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -18,24 +17,38 @@
                         brandPurple: '#8B5CF6',
                         brandPink: '#EC4899',
                         brandGold: '#F59E0B'
+                    },
+                    screens: {
+                        'xs': '375px'
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #04060E;
             -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar to keep mobile UI extremely clean */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #04060E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 9999px;
         }
     </style>
 </head>
 <body class="text-gray-100 flex flex-col min-h-screen md:h-screen md:overflow-hidden select-none bg-[#04060E]">
 
     <!-- Fixed Header -->
-    <header class="bg-black/60 backdrop-blur-md border-b border-gray-900/80 px-6 py-4 shrink-0 flex items-center justify-between z-20 sticky top-0 md:static">
+    <header class="bg-black/60 backdrop-blur-md border-b border-gray-900/80 px-4 py-3 shrink-0 flex items-center justify-between z-20 sticky top-0 md:static">
         <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brandPurple to-brandPink flex items-center justify-center shadow-lg shadow-purple-500/20">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,125 +56,141 @@
                 </svg>
             </div>
             <div>
-                <span class="text-sm font-extrabold tracking-wider bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">AI STUDIO HUB</span>
+                <span class="text-xs sm:text-sm font-extrabold tracking-wider bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">AI STUDIO HUB</span>
             </div>
         </div>
-        <div class="text-[10px] md:text-[11px] text-gray-400 font-semibold tracking-wider uppercase bg-gray-900/60 px-2.5 py-1 rounded-full border border-gray-800">
+        <div class="text-[9px] sm:text-[11px] text-gray-400 font-bold tracking-wider uppercase bg-gray-900/60 px-2.5 py-1 rounded-full border border-gray-800/80">
             Official Downloads
         </div>
     </header>
 
-    <!-- Main Content: Stacked on mobile, side-by-side on desktop -->
+    <!-- Main Content: Compact stacked on mobile, side-by-side on desktop -->
     <main class="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
         
         <!-- ANDROID APP SECTION (AI Image Generator) -->
-        <section class="flex-1 min-h-[90vh] md:min-h-0 bg-gradient-to-b from-brandCardAndroid to-brandDark flex flex-col justify-center items-center p-8 sm:p-12 md:p-8 lg:p-12 relative border-b border-gray-900 md:border-b-0 md:border-r border-gray-800/40 overflow-hidden">
-            <!-- Subtle ambient glow in background -->
-            <div class="absolute w-64 h-64 bg-brandPurple/10 rounded-full blur-[90px] -top-10 -left-10 pointer-events-none"></div>
-            <div class="absolute w-40 h-40 bg-brandPink/5 rounded-full blur-[60px] bottom-10 right-10 pointer-events-none"></div>
+        <section class="flex-1 bg-gradient-to-b from-brandCardAndroid to-brandDark flex flex-col justify-center items-center py-8 px-4 xs:py-10 xs:px-6 sm:p-12 md:p-8 lg:p-12 relative border-b border-gray-900/60 md:border-b-0 md:border-r border-gray-800/40 overflow-hidden">
+            <!-- Ambient glow in background -->
+            <div class="absolute w-48 h-48 sm:w-64 sm:h-64 bg-brandPurple/10 rounded-full blur-[80px] sm:blur-[90px] -top-10 -left-10 pointer-events-none"></div>
+            <div class="absolute w-36 h-36 sm:w-40 sm:h-40 bg-brandPink/5 rounded-full blur-[50px] sm:blur-[60px] bottom-10 right-10 pointer-events-none"></div>
             
-            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-6 relative z-10 my-auto">
+            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-4 sm:space-y-6 relative z-10 my-auto">
                 <!-- App Store Badge Type -->
-                <span class="px-3.5 py-1.5 rounded-full text-[10px] font-extrabold tracking-widest text-brandPink bg-brandPink/10 border border-brandPink/20 uppercase shadow-inner">
+                <span class="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[9px] sm:text-[10px] font-extrabold tracking-widest text-brandPink bg-brandPink/10 border border-brandPink/20 uppercase shadow-inner">
                     Android Native
                 </span>
 
-                <!-- App Icon -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-[2rem] bg-[#090C16] p-1 border border-purple-500/30 shadow-2xl relative overflow-hidden flex items-center justify-center transition-transform duration-500 hover:rotate-3">
+                <!-- App Icon Wrapper (Optimized for Mobile/Tablet) -->
+                <div class="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 rounded-[1.75rem] xs:rounded-[2rem] bg-[#090C16] p-1 border border-purple-500/30 shadow-2xl relative overflow-hidden flex items-center justify-center transition-transform duration-500 hover:rotate-3">
                     <div class="absolute inset-0 bg-gradient-to-tr from-brandPurple via-brandPink to-brandGold opacity-20"></div>
-                    <!-- Icon shape matching visual signature -->
-                    <svg class="w-16 h-16 text-white z-10" viewBox="0 0 100 100" fill="none">
-                        <rect x="18" y="18" width="64" height="64" rx="18" fill="#0C0A1C" stroke="url(#paint0_linear)" stroke-width="3"/>
-                        <circle cx="50" cy="50" r="18" stroke="#EC4899" stroke-width="4"/>
-                        <circle cx="50" cy="50" r="9" fill="#8B5CF6"/>
-                        <defs>
-                            <linearGradient id="paint0_linear" x1="18" y1="18" x2="82" y2="82" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#8B5CF6"/>
-                                <stop offset="0.5" stop-color="#EC4899"/>
-                                <stop offset="1" stop-color="#F59E0B"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <!-- Custom Image Logo with Error Fallback -->
+                    <img class="w-full h-full object-cover rounded-[1.5rem] xs:rounded-[1.75rem] z-10" 
+                         src="https://play-lh.googleusercontent.com/MajW_tpIjRwytMc0rnJQKb56ZtRV4tmqveLV6JMelwcvndxyCmSnpbtvNGsoN-7Sw0cZm-9fVAbtUmV11HWwog=w480-h960-rw" 
+                         alt="AI Image Generator Logo"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'absolute inset-0 bg-gradient-to-tr from-brandPurple to-brandPink flex items-center justify-center z-10\'><span class=\'text-2xl font-black text-white\'>AI</span></div>';">
                 </div>
 
                 <!-- App Identity Metadata -->
-                <div class="space-y-1.5">
+                <div class="space-y-1.5 sm:space-y-2">
                     <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight">
                         AI Image Generator
                     </h2>
-                    <p class="text-xs text-gray-400">
-                        Developer Raman • <span class="text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-md">★ Rated 3+</span>
-                    </p>
+                    
+                    <!-- 5 Star Rating Element -->
+                    <div class="flex flex-col items-center space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <!-- 5 Beautiful Gold Stars -->
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-[10px] text-gray-400 font-medium">
+                            Developer Raman • <span class="text-emerald-400 font-semibold bg-emerald-500/10 px-1.5 py-0.5 rounded-md">5.0 Rated</span>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Simple description -->
-                <p class="text-xs sm:text-sm text-gray-400 max-w-xs leading-relaxed px-2">
+                <p class="text-xs sm:text-sm text-gray-400 max-w-xs leading-relaxed px-1 sm:px-2">
                     Apne text inputs ko seconds me gorgeous digital photos, sketches aur avatars me badlein.
                 </p>
 
                 <!-- GOOGLE PLAY DOWNLOAD ACTION BUTTON -->
-                <a href="https://play.google.com/store/apps/details?id=com.developerraman.aiimagegenerator" target="_blank" class="w-full bg-[#0D1022] hover:bg-brandPurple/20 border border-brandPink/30 hover:border-brandPink/80 px-6 py-4 rounded-2xl flex items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-purple-950/20 group">
+                <a href="https://play.google.com/store/apps/details?id=com.developerraman.aiimagegenerator" target="_blank" class="w-full bg-[#0D1022] hover:bg-brandPurple/20 border border-brandPink/30 hover:border-brandPink/80 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl flex items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-purple-950/20 group">
                     <!-- Standard Google Play vector badge -->
-                    <svg class="w-7 h-7 shrink-0 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7 shrink-0 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M3 5.25V18.75L15.3 12L3 5.25Z" fill="#34A853"/>
                         <path d="M15.3 12L19.5 9.6L3 3V5.25L15.3 12Z" fill="#EA4335"/>
                         <path d="M15.3 12L3 18.75V21L19.5 14.4L15.3 12Z" fill="#FBBC05"/>
                         <path d="M19.5 14.4L21 13.5C21.9 12.9 21.9 11.1 21.0 10.5L19.5 9.6L15.3 12L19.5 14.4Z" fill="#4285F4"/>
                     </svg>
                     <div class="text-left">
-                        <span class="block text-[9px] text-gray-400 uppercase tracking-widest font-semibold">Download Free</span>
-                        <span class="text-sm font-extrabold text-white">Google Play Store</span>
+                        <span class="block text-[8px] text-gray-400 uppercase tracking-widest font-semibold">Download Free</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-white">Google Play Store</span>
                     </div>
                 </a>
             </div>
         </section>
 
         <!-- IOS APP SECTION (Weargen Clothes Changer) -->
-        <section class="flex-1 min-h-[90vh] md:min-h-0 bg-gradient-to-b from-brandCardIos to-brandDark flex flex-col justify-center items-center p-8 sm:p-12 md:p-8 lg:p-12 relative overflow-hidden">
-            <!-- Ambient golden flow background -->
-            <div class="absolute w-64 h-64 bg-brandGold/5 rounded-full blur-[100px] bottom-10 right-10 pointer-events-none"></div>
-            <div class="absolute w-40 h-40 bg-purple-900/10 rounded-full blur-[80px] -top-10 -right-10 pointer-events-none"></div>
+        <section class="flex-1 bg-gradient-to-b from-brandCardIos to-brandDark flex flex-col justify-center items-center py-8 px-4 xs:py-10 xs:px-6 sm:p-12 md:p-8 lg:p-12 relative overflow-hidden">
+            <!-- Ambient glow background -->
+            <div class="absolute w-48 h-48 sm:w-64 sm:h-64 bg-brandGold/5 rounded-full blur-[90px] sm:blur-[100px] bottom-10 right-10 pointer-events-none"></div>
+            <div class="absolute w-36 h-36 sm:w-40 sm:h-40 bg-purple-900/10 rounded-full blur-[70px] sm:blur-[80px] -top-10 -right-10 pointer-events-none"></div>
             
-            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-6 relative z-10 my-auto">
+            <div class="w-full max-w-sm flex flex-col items-center text-center space-y-4 sm:space-y-6 relative z-10 my-auto">
                 <!-- App Store Badge Type -->
-                <span class="px-3.5 py-1.5 rounded-full text-[10px] font-extrabold tracking-widest text-brandGold bg-brandGold/10 border border-brandGold/20 uppercase shadow-inner">
+                <span class="px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[9px] sm:text-[10px] font-extrabold tracking-widest text-brandGold bg-brandGold/10 border border-brandGold/20 uppercase shadow-inner">
                     iOS Exclusive
                 </span>
 
-                <!-- App Icon -->
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-[2rem] bg-black border border-gray-800 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center p-3 transition-transform duration-500 hover:-rotate-3">
+                <!-- App Icon Wrapper (Optimized for Mobile/Tablet) -->
+                <div class="w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 rounded-[1.75rem] xs:rounded-[2rem] bg-black border border-gray-800 p-1 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center transition-transform duration-500 hover:-rotate-3">
                     <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-40"></div>
-                    <!-- Icon signature matches visual style -->
-                    <svg class="w-12 h-12 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4a3 3 0 00-3 3v1a1 1 0 001 1h4a1 1 0 001-1V7a3 3 0 00-3-3z M12 8v12M6 12h12L12 8z"/>
-                    </svg>
-                    <span class="text-[9px] text-gray-300 font-extrabold tracking-widest mt-2 relative z-10">WEARGEN</span>
+                    <!-- Custom Image Logo with Error Fallback -->
+                    <img class="w-full h-full object-cover rounded-[1.5rem] xs:rounded-[1.75rem] z-10" 
+                         src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/61/52/d56152ce-07f0-60b0-359a-ac4061f71c1c/Placeholder.mill/400x400bb-75.webp" 
+                         alt="Weargen Logo"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'absolute inset-0 bg-[#111115] flex flex-col items-center justify-center z-10\'><span class=\'text-xs font-extrabold tracking-widest text-brandGold\'>WEARGEN</span></div>';">
                 </div>
 
                 <!-- App Identity Metadata -->
-                <div class="space-y-1.5">
+                <div class="space-y-1.5 sm:space-y-2">
                     <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight">
                         Weargen AI
                     </h2>
-                    <p class="text-xs text-gray-400">
-                        Rohan Kamboj • <span class="text-brandGold font-semibold bg-brandGold/10 px-2 py-0.5 rounded-md">★ Premium Fashion</span>
-                    </p>
+                    
+                    <!-- 5 Star Rating Element -->
+                    <div class="flex flex-col items-center space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <!-- 5 Beautiful Gold Stars -->
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-4 h-4 text-brandGold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-[10px] text-gray-400 font-medium">
+                            Rohan Kamboj • <span class="text-brandGold font-semibold bg-brandGold/10 px-1.5 py-0.5 rounded-md">5.0 Rated</span>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Simple description -->
-                <p class="text-xs sm:text-sm text-gray-400 max-w-xs leading-relaxed px-2">
+                <p class="text-xs sm:text-sm text-gray-400 max-w-xs leading-relaxed px-1 sm:px-2">
                     Apne photos me hairstyles, kapde, and custom background themes badlein bina real change ke.
                 </p>
 
                 <!-- APPLE APP STORE DOWNLOAD ACTION BUTTON -->
-                <a href="https://apps.apple.com/in/app/weargen-ai-clothes-changer/id6775276519" target="_blank" class="w-full bg-[#111115] hover:bg-brandGold/20 border border-brandGold/30 hover:border-brandGold/80 px-6 py-4 rounded-2xl flex items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-amber-950/10 group">
+                <a href="https://apps.apple.com/in/app/weargen-ai-clothes-changer/id6775276519" target="_blank" class="w-full bg-[#111115] hover:bg-brandGold/20 border border-brandGold/30 hover:border-brandGold/80 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl flex items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg shadow-amber-950/10 group">
                     <!-- Standard Apple App Store vector icon -->
-                    <svg class="w-7 h-7 text-white shrink-0 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white shrink-0 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.48C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.1 16.67C20.08 16.74 19.67 18.11 18.71 19.5M15.97 4.17C16.63 3.37 17.07 2.28 16.95 1C15.97 1.04 14.78 1.66 14.08 2.48C13.48 3.18 12.96 4.3 13.1 5.56C14.19 5.64 15.31 5 15.97 4.17Z"/>
                     </svg>
                     <div class="text-left">
-                        <span class="block text-[9px] text-gray-400 uppercase tracking-widest font-semibold">Download on the</span>
-                        <span class="text-sm font-extrabold text-white">App Store (iOS)</span>
+                        <span class="block text-[8px] text-gray-400 uppercase tracking-widest font-semibold">Download on the</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-white">App Store (iOS)</span>
                     </div>
                 </a>
             </div>
@@ -171,5 +200,3 @@
 
 </body>
 </html>
-
-```
